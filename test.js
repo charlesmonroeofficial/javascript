@@ -84,12 +84,12 @@
                 return t
             }, r.prototype._openPdf = function(t) {
                 var e = this._openWindow();
-                e.title = "test.pdf";
                 try {
                     this.getBlob(function(t) {
                         var n = window.URL || window.webkitURL,
                             r = n.createObjectURL(t);
                         e.location.href = r
+                        e.location.title = "test.pdf"
                     }, t)
                 } catch (t) {
                     throw e.close(), t
