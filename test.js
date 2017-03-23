@@ -83,13 +83,12 @@
                 if (null === t) throw "Open PDF in new window blocked by browser";
                 return t
             }, r.prototype._openPdf = function(t) {
-                var e = this._openWindow();
+                //var e = this._openWindow();
                 try {
                     this.getBlob(function(t) {
                         var n = window.URL || window.webkitURL,
                             r = n.createObjectURL(t);
-                        e.location.href = r
-                        e.title = "test.pdf"
+                        window.open(r, "test.pdf")
                     }, t)
                 } catch (t) {
                     throw e.close(), t
