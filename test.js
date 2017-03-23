@@ -82,11 +82,11 @@
                 var t = window.open("", "_blank");
                 if (null === t) throw "Open PDF in new window blocked by browser";
                 return t
-            }, r.prototype._openPdf = function(f, m, t) {
+            }, r.prototype._openPdf = function(t) {
                 var e = this._openWindow();
+                e.title = "test.pdf";
                 try {
-                    "function" == typeof f && (m = f, f = null), f = f || "file.pdf", this.getBlob(function(t) {
-                        s(t, f), "function" == typeof m && m()
+                    this.getBlob(function(t) {
                         var n = window.URL || window.webkitURL,
                             r = n.createObjectURL(t);
                         e.location.href = r
@@ -94,8 +94,8 @@
                 } catch (t) {
                     throw e.close(), t
                 }
-            }, r.prototype.open = function(f, e, t) {
-                t = t || {}, t.autoPrint = !1, this._openPdf(f, e, t)
+            }, r.prototype.open = function(t) {
+                t = t || {}, t.autoPrint = !1, this._openPdf(t)
             }, r.prototype.print = function(t) {
                 t = t || {}, t.autoPrint = !0, this._openPdf(t)
             }, r.prototype.download = function(t, e, n) {
