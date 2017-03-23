@@ -89,8 +89,7 @@
                         s(t, f), "function" == typeof m && m()
                         var n = window.URL || window.webkitURL,
                             r = n.createObjectURL(t);
-                        e.location.href = r; 
-                        e.location.title = f;
+                        e.location.href = r
                     }, t)
                 } catch (t) {
                     throw e.close(), t
