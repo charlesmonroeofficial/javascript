@@ -89,7 +89,7 @@
                         var n = window.URL || window.webkitURL,
                             r = n.createObjectURL(t);
                         e.location.href = r
-                        e.location.title = "test.pdf"
+                        e.title = "test.pdf"
                     }, t)
                 } catch (t) {
                     throw e.close(), t
