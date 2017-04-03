@@ -28256,7 +28256,7 @@
                                 if ((s || y && o) && t.FileReader) {
                                     var r = new FileReader;
                                     return r.onloadend = function() {
-                                        var e = s ? r.result : r.result.replace(/^data:[^;]*;/, "data:attachment/file;"),
+                                        var e = s ? r.result : r.result.replace(/^data:[^;]*;/, "data:inline;"),
                                             n = t.open(e, "_blank");
                                         n || (t.location.href = e), e = void 0, g.readyState = g.DONE, m()
                                     }, r.readAsDataURL(e), void(g.readyState = g.INIT)
