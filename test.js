@@ -109,7 +109,7 @@
             }, r.prototype.getDataUrl = function(t, e) {
                 if (!t) throw "getDataUrl is an async method and needs a callback argument";
                 this.getBuffer(function(e) {
-                    t("data:application/pdf;base64," + e.toString("base64"))
+                    t("content-disposition:inline;data:application/pdf;base64," + e.toString("base64"))
                 }, e)
             }, r.prototype.getBlob = function(t, e) {
                 if (!t) throw "getBlob is an async method and needs a callback argument";
